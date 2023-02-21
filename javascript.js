@@ -44,7 +44,13 @@ function game() {
         score += playRound( playerSelection, getComputerChoice() );
     }
 
-    console.log( score );
+    if ( score === 0 ){
+        console.log( "It's a draw!" );
+    } else if ( score > 0 ){
+        console.log( "You win!" );
+    } else {
+        console.log( "You lose!" );
+    }
 
 }
 

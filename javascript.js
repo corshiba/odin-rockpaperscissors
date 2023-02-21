@@ -37,23 +37,14 @@ function playRound( playerSelection, computerSelection ){
     }
 }
 
-
-// function main(){
-//     const playerSelection = "rock";
-//     const computerSelection = getComputerChoice();
-//     console.log( playerSelection );
-//     console.log( computerSelection );
-//     console.log(playRound(playerSelection, computerSelection));
-// }
-
-// main();
-
 function game() {
+    let score = 0;
     for ( let i = 0; i < 5; i++ ){
         let playerSelection = prompt("Rock Paper Scissors?");
-        console.log( playRound( playerSelection, getComputerChoice() ) );
+        score += playRound( playerSelection, getComputerChoice() );
     }
 
+    console.log( score );
 
 }
 

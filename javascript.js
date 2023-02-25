@@ -1,5 +1,7 @@
 const choice = ['rock', 'paper', 'scissors'];
 
+let score = 0;
+
 function getComputerChoice() {
     return choice[ Math.floor( Math.random() * 3 ) ];
 }
@@ -37,21 +39,11 @@ function playRound( playerSelection, computerSelection ){
     }
 }
 
-function game() {
-    let score = 0;
-    //for ( let i = 0; i < 5; i++ ){
-        let playerSelection = prompt("Rock Paper Scissors?");
-        score += playRound( playerSelection, getComputerChoice() );
-    //}
+const btns = document.querySelectorAll('button');
 
-    if ( score === 0 ){
-        console.log( "It's a draw!" );
-    } else if ( score > 0 ){
-        console.log( "You win!" );
-    } else {
-        console.log( "You lose!" );
-    }
-
-}
-
-game();
+btns.forEach( (btn) => {
+    console.log(btn.classList.value);
+    btn.addEventListener( 'click', () => {
+        playRound( btn.classList.value, getComputerChoice() );
+    } );
+});

@@ -39,10 +39,10 @@ function playRound( playerSelection, computerSelection ){
 
 function game() {
     let score = 0;
-    for ( let i = 0; i < 5; i++ ){
+    //for ( let i = 0; i < 5; i++ ){
         let playerSelection = prompt("Rock Paper Scissors?");
         score += playRound( playerSelection, getComputerChoice() );
-    }
+    //}
 
     if ( score === 0 ){
         console.log( "It's a draw!" );
